@@ -25,7 +25,7 @@ func decode(number string, radix int) int {
 	}
 
 	for index, digit := range digits {
-		value := charValue(digit)
+		value := strings.IndexRune(chars, digit)
 		totalValue += int(math.Pow(float64(radix), float64(index))) * value
 	}
 	return totalValue
@@ -45,9 +45,4 @@ func encode(number int, radix int) string {
 	}
 
 	return string(digits)
-
-}
-
-func charValue(digit rune) int {
-	return strings.IndexRune(chars, digit)
 }

@@ -71,9 +71,6 @@ func decode(number string, radix int) float64 {
 	totalFraction := 0.0
 	if len(strs) == 2 {
 		runeFractions := []rune(strs[1]) 
-		for i, j := 0, len(runeFractions)-1; i < j; i, j = i+1, j-1 {
-			runeFractions[i], runeFractions[j] = runeFractions[j], runeFractions[i]
-		}
 
 		for index, runeFraction := range runeFractions {
 			value := strings.IndexRune(chars, runeFraction)
